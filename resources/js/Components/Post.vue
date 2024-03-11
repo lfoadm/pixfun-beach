@@ -1,12 +1,13 @@
 <script setup>
-import { toRefs, reactive } from 'vue';
+import { ref, toRefs, reactive } from 'vue';
 import { Link, router } from '@inertiajs/vue3';
 
 import AccountMultiple from 'vue-material-design-icons/AccountMultiple.vue'
-import ThumbUp from 'vue-material-design-icons/ThumbUp.vue'
 import Check from 'vue-material-design-icons/Check.vue'
 import Send from 'vue-material-design-icons/Send.vue'
 import Delete from 'vue-material-design-icons/Delete.vue'
+
+import Like from '@/Components/Like.vue';
 
 import { useGeneralStore } from '@/stores/general';
 import { storeToRefs } from 'pinia';
@@ -22,7 +23,10 @@ const props = defineProps({
     comments: Object,
 });
 
+
 const { post, user, comments } = toRefs(props)
+
+const data = props.post;
 
 const createComment = () => {
     router.post('/comment', {
@@ -85,8 +89,9 @@ const isUser = () => {
             :src="post.image" 
         >
         <div id="Likes" class="px-5">
-            <div class="flex items-center justify-between py-3 border-b">
-                <ThumbUp fillColor="#1d72e2" :size="16" />
+            <div class="flex items-center justify-between py-3 border-b cursor-pointer">
+                <Like :content="data"/>
+
                 <div class="text-sm text-gray-600 font-semibold">{{ comments.length }} comentário(s)</div>
             </div>
         </div>

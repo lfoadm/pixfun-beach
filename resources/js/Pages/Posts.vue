@@ -5,7 +5,7 @@ import CreatePostBox from '@/Components/CreatePostBox.vue';
 import Post from '@/Components/Post.vue';
 
 import Magnify from 'vue-material-design-icons/Magnify.vue'
-import TelevisionPlay from 'vue-material-design-icons/TelevisionPlay.vue'
+// import TelevisionPlay from 'vue-material-design-icons/TelevisionPlay.vue'
 import StoreFrontOutline from 'vue-material-design-icons/StoreFrontOutline.vue'
 import AccountGroup from 'vue-material-design-icons/AccountGroup.vue'
 import AccountMultiple from 'vue-material-design-icons/AccountMultiple.vue'
@@ -107,31 +107,6 @@ const user = usePage().props.auth.user
                                 <img class="rounded-full ml-1 min-w-[38px] max-h-[38px]"
                                     src="https://picsum.photos/id/146/300/320" alt="">
                                 <div class="text-[15px] text-gray-800 font-bold pl-3">Carolina Mendonca</div>
-                            </div>
-                            <div class="flex items-center justify-start cursor-pointer hover:bg-[#e5e6e9] py-2 rounded-md">
-                                <img class="rounded-full ml-1 min-w-[38px] max-h-[38px]"
-                                    src="https://picsum.photos/id/145/300/321" alt="">
-                                <div class="text-[15px] text-gray-800 font-bold pl-3">José Rosa</div>
-                            </div>
-                            <div class="flex items-center justify-start cursor-pointer hover:bg-[#e5e6e9] py-2 rounded-md">
-                                <img class="rounded-full ml-1 min-w-[38px] max-h-[38px]"
-                                    src="https://picsum.photos/id/144/300/322" alt="">
-                                <div class="text-[15px] text-gray-800 font-bold pl-3">Raynara Talita</div>
-                            </div>
-                            <div class="flex items-center justify-start cursor-pointer hover:bg-[#e5e6e9] py-2 rounded-md">
-                                <img class="rounded-full ml-1 min-w-[38px] max-h-[38px]"
-                                    src="https://picsum.photos/id/143/300/323" alt="">
-                                <div class="text-[15px] text-gray-800 font-bold pl-3">Juliano Gomes Souto</div>
-                            </div>
-                            <div class="flex items-center justify-start cursor-pointer hover:bg-[#e5e6e9] py-2 rounded-md">
-                                <img class="rounded-full ml-1 min-w-[38px] max-h-[38px]"
-                                    src="https://picsum.photos/id/142/300/324" alt="">
-                                <div class="text-[15px] text-gray-800 font-bold pl-3">Joáo Martins</div>
-                            </div>
-                            <div class="flex items-center justify-start cursor-pointer hover:bg-[#e5e6e9] py-2 rounded-md">
-                                <img class="rounded-full ml-1 min-w-[38px] max-h-[38px]"
-                                    src="https://picsum.photos/id/141/300/325" alt="">
-                                <div class="text-[15px] text-gray-800 font-bold pl-3">Outro usuário</div>
                             </div>
                         </div>
                     </div>

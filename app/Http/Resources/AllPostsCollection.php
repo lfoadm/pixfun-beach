@@ -19,7 +19,10 @@ class AllPostsCollection extends ResourceCollection
                 'id' => $item->id,
                 'text' => $item->text,
                 'image' => $item->image,
-                'created_at' => $item->created_at->format(' d/m/Y'),
+                // 'created_at' => $item->created_at->format(' d/m/Y'),
+                'created_at' => $item->created_at->diffForHumans(),
+                'like_count' => $item->like->count(),
+                'liked' => !! $item->like->where('user_id', auth()->id())->count(),
                 'comments' => $item->comments->map(function ($comment) {
                     return [
                         'id' => $comment->id,
@@ -31,6 +34,7 @@ class AllPostsCollection extends ResourceCollection
                         ],
                     ];
                 }),
+                
                 'user' => [
                     'id' => $item->user->id,
                     'name' => $item->user->name,

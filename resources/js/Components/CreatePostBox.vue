@@ -37,18 +37,18 @@ const user = usePage().props.auth.user
             </div>
         </div>
         <div class="flex items-center py-3 border-b">
-            <button class="flex items-center justify-center p-1 hover:bg-[#f2f2f2] w-full rounded-lg mx-1 cursor-pointer">
+            <!-- <button class="flex items-center justify-center p-1 hover:bg-[#f2f2f2] w-full rounded-lg mx-1 cursor-pointer">
                 <VideoImage :size="35" fillColor="#f12848" />
                 <div class="text-[#6f7275] font-bold">Live</div>
-            </button>
+            </button> -->
             <button class="flex items-center justify-center p-1 hover:bg-[#f2f2f2] w-full rounded-lg mx-1 cursor-pointer">
                 <Image :size="35" fillColor="#43be62" />
                 <div class="text-[#6f7275] font-bold">Imagem/Vídeo</div>
             </button>
-            <button class="flex items-center justify-center p-1 hover:bg-[#f2f2f2] w-full rounded-lg mx-1 cursor-pointer">
+            <!-- <button class="flex items-center justify-center p-1 hover:bg-[#f2f2f2] w-full rounded-lg mx-1 cursor-pointer">
                 <EmoticonOutline :size="35" fillColor="#f8b927" />
                 <div class="text-[#6f7275] font-bold">Atividades</div>
-            </button>
+            </button> -->
         </div>
     </div>
 </template>
