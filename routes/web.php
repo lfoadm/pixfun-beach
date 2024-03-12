@@ -25,6 +25,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/user/{id}', [UserController::class, 'show'])->name('user.show');
     Route::post('/user/update-image', [UserController::class, 'updateImage'])->name('user.updateImage');
+    Route::post('/user/update-image-cover', [UserController::class, 'updateImageCover'])->name('user.updateImageCover');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

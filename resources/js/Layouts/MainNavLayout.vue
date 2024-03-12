@@ -17,12 +17,13 @@ import Bell from 'vue-material-design-icons/Bell.vue'
 import Logout from 'vue-material-design-icons/Logout.vue'
 
 import CropperModal from '@/Components/CropperModal.vue';
+import CropperModalCover from '@/Components/CropperModalCover.vue';
 
 import { useGeneralStore } from '@/stores/general';
 import { storeToRefs } from 'pinia';
 
 const useGeneral = useGeneralStore()
-const { isPostOverlay, isCropperModal, isImageDisplay } = storeToRefs(useGeneral)
+const { isPostOverlay, isCropperModal, isImageDisplay, isCropperModalCover } = storeToRefs(useGeneral)
 
 const user = usePage().props.auth.user
 
@@ -143,6 +144,11 @@ let showMenu = ref(false)
     <CropperModal
         v-if="isCropperModal"
         @showModal="isCropperModal = false"
+    />
+
+    <CropperModalCover
+        v-if="isCropperModalCover"
+        @showModalCover="isCropperModalCover = false"
     />
     
     <ImageDisplay

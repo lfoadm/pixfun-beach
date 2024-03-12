@@ -5,6 +5,7 @@ import CreatePostBox from '@/Components/CreatePostBox.vue';
 import Post from '@/Components/Post.vue';
 
 import Camera from 'vue-material-design-icons/Camera.vue'
+import Pencil from 'vue-material-design-icons/Pencil.vue'
 import Pen from 'vue-material-design-icons/Pen.vue'
 
 import { useGeneralStore } from '@/stores/general';
@@ -12,7 +13,7 @@ import { storeToRefs } from 'pinia';
 import Posts from './Posts.vue';
 
 const useGeneral = useGeneralStore()
-const { isCropperModal ,isImageDisplay } = storeToRefs(useGeneral)
+const { isCropperModal ,isImageDisplay, isCropperModalCover } = storeToRefs(useGeneral)
 
 const props = defineProps({ user: Object, posts: Object });
 
@@ -25,8 +26,14 @@ const props = defineProps({ user: Object, posts: Object });
         <div class="w-full min-h-[100vh] pb-20 bg-[#f1f2f5]">
             <div class="w-full bg-white">
                 <div class="max-w-[1100px] pt-[56px] mx-auto pb-1">
-                    <img class="rounded-b-xl" src="https://picsum.photos/id/158/2000/320">
-                    
+                    <img class="rounded-b-xl" :src="user.imageCover">
+                    <button
+                        v-if="$page.props.auth.user.id === user.id"
+                        @click="isCropperModalCover = true" 
+                        class="absolute right-100 top-[200px] bg-gray-200 hover:bg-gray-300 p-1.5 rounded-full cursor-pointer"
+                    >
+                        <Pencil :size="25"/>
+                    </button>
                     <div id="ProfileInfo" class="flex md:flex-row flex-col items-center justify-between px-4">
                         <div class="flex md:flex-row flex-col gap-4 md:-mt-6 -mt-16 items-center">
                             <div class="relative">
