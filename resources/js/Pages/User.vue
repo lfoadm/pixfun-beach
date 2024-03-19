@@ -1,6 +1,7 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
 import MainNavLayout from '@/Layouts/MainNavLayout.vue';
+import { router } from '@inertiajs/vue3';
 import CreatePostBox from '@/Components/CreatePostBox.vue';
 import Post from '@/Components/Post.vue';
 
@@ -11,6 +12,7 @@ import Pen from 'vue-material-design-icons/Pen.vue'
 import { useGeneralStore } from '@/stores/general';
 import { storeToRefs } from 'pinia';
 import Posts from './Posts.vue';
+import { ref } from 'vue';
 
 const useGeneral = useGeneralStore()
 const { isCropperModal ,isImageDisplay, isCropperModalCover } = storeToRefs(useGeneral)
@@ -20,7 +22,7 @@ const props = defineProps({ user: Object, posts: Object });
 </script>
 
 <template>
-    <Head title="User" />
+     <Head title="User" />
 
     <MainNavLayout>
         <div class="w-full min-h-[100vh] pb-20 bg-[#f1f2f5]">

@@ -39,7 +39,6 @@ const crop = () => {
     })
     emit('showModalCover', false)
 }
-
 </script>
 
 <template>

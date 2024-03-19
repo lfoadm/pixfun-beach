@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Services\ImageCoverService;
 use App\Services\ImageService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use Intervention\Image\Facades\Image as ResizeImage;
 
@@ -37,7 +38,7 @@ class UserController extends Controller
         $user->save();
     }
 
-    public function updateImageCover(Request $request)
+    public function updateImageCover(Request $request, User $user)
     {
         $request->validate([ 'imageCover' => 'required|mimes:jpg,jpeg,png' ]);
         $user = (new ImageCoverService)->updateImage(auth()->user(), $request);
